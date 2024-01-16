@@ -10,7 +10,7 @@ stream:
   type: NEW_AND_OLD_IMAGES    
 """)
 
-class SkeletorDDBTestMixin:
+class SkeletorDynamodbTestMixin:
 
     def setup_ddb(self,
                   tables=[TestTable]):
