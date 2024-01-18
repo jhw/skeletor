@@ -12,7 +12,7 @@ stream:
 
 class SkeletorDynamodbTestMixin:
 
-    def setup_ddb(self,
+    def setup_dynamodb(self,
                   tables=[TestTable]):
         def init_table(table):
             attrs=[{"AttributeName": name,
@@ -46,7 +46,7 @@ class SkeletorDynamodbTestMixin:
         self.tables=[create_table(client, resource, table)
                      for table in tables]
                 
-    def teardown_ddb(self):
+    def teardown_dynamodb(self):
         for table in self.tables:
             table.delete()
 
