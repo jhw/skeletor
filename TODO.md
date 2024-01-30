@@ -1,6 +1,5 @@
 ### short
 
-- sqs queue template
 - sns topic template
 - events timer template
 
@@ -12,6 +11,7 @@
 
 ### done
 
+- sqs queue template
 - eventbridge table event template
 - eventbridge bucket event template
 - apigateway post
