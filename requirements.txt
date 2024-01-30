@@ -1,1 +1,4 @@
-moto
+boto3
+botocore
+moto==4.2.14
+pyyaml

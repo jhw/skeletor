@@ -5,7 +5,7 @@ infra:
     method: GET
     path: hello
     parameters:
-    - foo
+    - foobar
   permissions:
   - dynamodb:Query
   - s3:GetObject
@@ -19,7 +19,8 @@ def handler(event, context=None,
     try:
         table, s3 = (boto3.resource("dynamodb").Table(tablename),
                      boto3.client("s3"))
-        struct=[]
+        foobar=event["queryStringParameters"]["foobar"]
+        struct=[{"hello": "world"}]
         return {"statusCode": 200,
                 "headers": {"Content-Type": "application/json"},
                 "body": json.dumps(struct,
