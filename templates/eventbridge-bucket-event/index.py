@@ -1,7 +1,7 @@
 """
 infra:
   events:
-  - name: my-s3-event
+  - name: my-bucket-event
     pattern:
       object:
         key:
@@ -11,7 +11,12 @@ infra:
     source:
       name: #{AppName}
       type: bucket
-  permissions: []
+  permissions:
+  - dynamodb:GetItem
+  - dynamodb:PutItem
+  - dynamodb:UpdateItem
+  - s3:GetObject
+  - s3:PutObject
 """
 
 import boto3, json, os

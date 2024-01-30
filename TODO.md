@@ -1,12 +1,10 @@
 ### short
 
-- eventbridge table event template
-
-### medium
-
 - sqs queue template
 - sns topic template
 - events timer template
+
+### medium
 
 - admin script to create template
 
@@ -14,6 +12,7 @@
 
 ### done
 
+- eventbridge table event template
 - eventbridge bucket event template
 - apigateway post
 - test script
