@@ -51,8 +51,11 @@ def run_tests(tests):
             
 if __name__=="__main__":
     try:
+        print ("-- initialising handlers --")
         for tempname in os.listdir("templates"):
+            print (tempname)
             init_handler(tempname)
+        print ("-- running tests --")
         tests=filter_tests(AppName)
         run_tests(tests)
     except RuntimeError as error:

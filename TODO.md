@@ -1,20 +1,19 @@
 ### short
 
-- apigateway post
-
 ### templates
 
-- eventbridge table event
-- eventbridge bucket event 
+- eventbridge table event template
+- eventbridge bucket event template
 
-- sqs queue 
-- sns topic
-- events timer
+- sqs queue template
+- sns topic template
+- events timer template
 
 ### medium
 
 ### done
 
+- apigateway post
 - test script
 - iterate through directory
 - take path from each template  replacing template prefix  with demo
