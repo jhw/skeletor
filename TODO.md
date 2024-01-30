@@ -6,9 +6,9 @@
 
 ### medium
 
-- admin script to create template
-
-### medium
+- admin script to initialise template
+- add sns fixture support
+- ask which fixtures u want and have chatgpt remove unwanted ones
 
 ### done
 
@@ -17,7 +17,7 @@
 - apigateway post
 - test script
 - iterate through directory
-- take path from each template  replacing template prefix  with demo
+- take path from each template replacing template prefix  with demo
 - create series of variables expected to be required by the template
 - extract variables from template
 - asset all variables have corresponding values
