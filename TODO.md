@@ -1,13 +1,15 @@
 ### short
 
-### templates
-
 - eventbridge table event template
 - eventbridge bucket event template
+
+### medium
 
 - sqs queue template
 - sns topic template
 - events timer template
+
+- admin script to create template
 
 ### medium
 
