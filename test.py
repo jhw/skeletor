@@ -2,15 +2,19 @@ import importlib, inspect, os, re, unittest
         
 AppName="demo"
 
-def init_handler(tempname, appname=AppName):
-    dirname="/".join([appname]+tempname.split("-"))
+def init_env(appname, dirname):
     testclassname="%sTest" % "".join([tok.capitalize()
                                       for tok in dirname.split("/")])
     indexmodpath=".".join(dirname.split("/")+["index"])
-    env={"BucketKey": "%s_BUCKET" % appname.upper(),
-         "TableKey": "%s_BUCKET" % appname.upper(),
-         "TestClassName": testclassname,
-         "IndexModulePath": indexmodpath}
+    return {"AppName": appname,
+            "BucketKey": "%s_BUCKET" % appname.upper(),
+            "TableKey": "%s_BUCKET" % appname.upper(),
+            "TestClassName": testclassname,
+            "IndexModulePath": indexmodpath}
+
+def init_handler(tempname, appname=AppName):
+    dirname="/".join([appname]+tempname.split("-"))
+    env=init_env(appname, dirname)
     for filename in os.listdir("templates/%s" % tempname):
         body=open("templates/%s/%s" % (tempname, filename)).read()
         for expr in re.findall(r'#\{[A-Z](?:[a-z]+[A-Z]+)*[a-zA-Z0-9]*\}', body):

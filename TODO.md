@@ -1,7 +1,6 @@
 ### short
 
 - eventbridge table event template
-- eventbridge bucket event template
 
 ### medium
 
@@ -15,6 +14,7 @@
 
 ### done
 
+- eventbridge bucket event template
 - apigateway post
 - test script
 - iterate through directory
