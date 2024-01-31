@@ -1,17 +1,14 @@
 ### short
 
-- events timer template
-
-- admin script to initialise template
-
 ### medium
 
 - add sns fixture support
-
 - ask which fixtures u want and have chatgpt remove unwanted ones
 
 ### done
 
+- events timer template
+- admin script to initialise template
 - sns topic template
 - sqs queue template
 - eventbridge table event template
