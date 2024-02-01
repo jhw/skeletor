@@ -2,6 +2,8 @@ import importlib, inspect, os, re, unittest
         
 AppName="demo"
 
+TemplateDir="skeletor/templates"
+
 def init_env(appname, dirname):
     testclassname="%sTest" % "".join([tok.capitalize()
                                       for tok in dirname.split("/")])
@@ -12,11 +14,11 @@ def init_env(appname, dirname):
             "TestClassName": testclassname,
             "IndexModulePath": indexmodpath}
 
-def init_handler(tempname, appname=AppName):
+def init_handler(tempname, appname=AppName, tempdir=TemplateDir):
     dirname="/".join([appname]+tempname.split("-"))
     env=init_env(appname, dirname)
-    for filename in os.listdir("templates/%s" % tempname):
-        body=open("templates/%s/%s" % (tempname, filename)).read()
+    for filename in os.listdir("%s/%s" % (tempdir, tempname)):
+        body=open("%s/%s/%s" % (tempdir, tempname, filename)).read()
         for expr in re.findall(r'#\{[A-Z](?:[a-z]+[A-Z]+)*[a-zA-Z0-9]*\}', body):
             tempkey=expr[2:-1]
             if tempkey not in env:
@@ -56,7 +58,7 @@ def run_tests(tests):
 if __name__=="__main__":
     try:
         print ("-- initialising handlers --")
-        for tempname in os.listdir("templates"):
+        for tempname in os.listdir(TemplateDir):
             print (tempname)
             init_handler(tempname)
         print ("-- running tests --")

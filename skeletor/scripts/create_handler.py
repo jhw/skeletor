@@ -1,5 +1,7 @@
 import os, re
 
+TemplateDir="skeletor/templates"
+
 def filter_template(tempnames, tempfrag):
     matches=[]
     for tempname in tempnames:
@@ -21,9 +23,9 @@ def init_env(appname, dirname):
             "TestClassName": testclassname,
             "IndexModulePath": indexmodpath}
 
-def dump_handler(tempname, dirname, env):
-    for filename in os.listdir("templates/%s" % tempname):
-        body=open("templates/%s/%s" % (tempname, filename)).read()
+def dump_handler(tempname, dirname, env, tempdir=TemplateDir):
+    for filename in os.listdir("%s/%s" % (tempdir, tempname)):
+        body=open("%s/%s/%s" % (tempdir, tempname, filename)).read()
         for expr in re.findall(r'#\{[A-Z](?:[a-z]+[A-Z]+)*[a-zA-Z0-9]*\}', body):
             tempkey=expr[2:-1]
             if tempkey not in env:
@@ -36,7 +38,7 @@ def dump_handler(tempname, dirname, env):
 
 if __name__=="__main__":
     try:
-        tempnames=os.listdir("templates")
+        tempnames=os.listdir(TemplateDir)
         tempfrag=input("template: ")
         tempname=filter_template(tempnames, tempfrag)
         dirname=input("path: ").replace(".", "/")
