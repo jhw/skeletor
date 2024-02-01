@@ -58,7 +58,7 @@ def filter_packages(root):
     
 setuptools.setup(
     name="skeletor",
-    version="0.0.3",
+    version="0.0.4",
     author="jhw",
     author_email="justin.worrall@gmail.com",
     description="A test and scaffolding framework for pareto apps",

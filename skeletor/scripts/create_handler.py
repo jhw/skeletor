@@ -25,6 +25,8 @@ def init_env(appname, dirname):
 
 def dump_handler(tempname, dirname, env, tempdir=TemplateDir):
     for filename in os.listdir("%s/%s" % (tempdir, tempname)):
+        if not filename.endswith(".py"):
+            continue
         body=open("%s/%s/%s" % (tempdir, tempname, filename)).read()
         for expr in re.findall(r'#\{[A-Z](?:[a-z]+[A-Z]+)*[a-zA-Z0-9]*\}', body):
             tempkey=expr[2:-1]
