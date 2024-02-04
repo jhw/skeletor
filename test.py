@@ -10,7 +10,8 @@ def init_env(appname, dirname):
     indexmodpath=".".join(dirname.split("/")+["index"])
     return {"AppName": appname,
             "BucketKey": "%s_BUCKET" % appname.upper(),
-            "TableKey": "%s_BUCKET" % appname.upper(),
+            "WebsiteKey": "%s_WEBSITE" % appname.upper(),
+            "TableKey": "%s_TABLE" % appname.upper(),
             "TestClassName": testclassname,
             "IndexModulePath": indexmodpath}
 

@@ -1,5 +1,10 @@
 ### short
 
+- templates must not define handler function default args if they reference os.environ
+- really need a website event template
+- table event template references bucket event source
+- event templates (and anything else which refs table/bucket/website names) should define related boto3 clients/resources
+
 ### medium
 
 - add sns fixture support
@@ -7,6 +12,7 @@
 
 ### done
 
+- XXX_TABLE is mis- defined in templates
 - events timer template
 - admin script to initialise template
 - sns topic template
