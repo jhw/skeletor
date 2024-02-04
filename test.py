@@ -62,9 +62,6 @@ if __name__=="__main__":
     try:
         print ("-- initialising handlers --")
         for tempname in os.listdir(TemplateDir):
-            if not tempname.endswith(".py"):
-                continue
-            print (tempname)
             init_handler(tempname)
         print ("-- running tests --")
         tests=filter_tests(AppName)

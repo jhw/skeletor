@@ -39,12 +39,12 @@ infra:
 
 import boto3, json, os
 
-def handler(event, context=None,
-            bucketname=os.environ["#{BucketKey}"],
-            tablename=os.environ["#{TableKey}"]):
+def handler(event, context=None):
     try:
-        table, s3 = (boto3.resource("dynamodb").Table(tablename),
-                     boto3.client("s3"))
+        tablename=os.environ["#{TableKey}"]
+        table=boto3.resource("dynamodb").Table(tablename)
+        bucketname=os.environ["#{BucketKey}"]
+        s3=boto3.client("s3")
         body=json.loads(event["body"])
         return {"statusCode": 200,
                 "headers": {"Content-Type": "text/plain"},
