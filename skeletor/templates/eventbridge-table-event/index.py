@@ -11,7 +11,7 @@ infra:
       - ITEM
     source:
       name: #{AppName}
-      type: bucket
+      type: table
   permissions:
   - dynamodb:GetItem
   - dynamodb:PutItem
