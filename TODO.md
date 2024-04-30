@@ -1,5 +1,7 @@
 ### short
 
+- run migrate_infra.py on index handlers
+- refactor test.py env variables
 
 ### medium
 
