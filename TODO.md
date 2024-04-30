@@ -1,8 +1,7 @@
 ### short
 
-- table, bucket and queue event workers
+- refactor queue-event-worker event
 - run migrate_infra.py on templates
-- update init_env in scripts/create_handler.py
 - new tag 0.1
  
 ### medium
@@ -15,5 +14,7 @@
 
 ### done
 
+- update init_env in scripts/create_handler.py
+- table, bucket and queue event workers
 - check pareto2 event types
 - endpoint, event, timer, other?

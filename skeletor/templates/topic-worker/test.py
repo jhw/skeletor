@@ -43,9 +43,9 @@ class #{TestClassName}(SkeletorTestBase,
               bucket=TestBucket):
         self.env={}
         self.setup_dynamodb()
-        self.env["#{TableKey}"]=table["name"]
+        self.env["APP_TABLE"]=table["name"]
         self.setup_s3()
-        self.env["#{BucketKey}"]=bucket["name"]
+        self.env["APP_BUCKET"]=bucket["name"]
         with self.tables[0].batch_writer() as batch:
             for fixture in tablefixtures:
                 batch.put_item(Item=fixture)

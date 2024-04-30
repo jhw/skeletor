@@ -23,9 +23,9 @@ infra:
 import boto3, json, os
 
 def handler(event, context=None):
-    tablename=os.environ["#{TableKey}"]
+    tablename=os.environ["APP_TABLE"]
     table=boto3.resource("dynamodb").Table(tablename)
-    bucketname=os.environ["#{BucketKey}"]
+    bucketname=os.environ["APP_BUCKET"]
     s3=boto3.client("s3")
     for record in event["detail"]["records"]:
         item={k: list(v.values())[0]

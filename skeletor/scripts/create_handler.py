@@ -13,15 +13,11 @@ def filter_template(tempnames, tempfrag):
         raise RuntimeError("multiple matching templates found - %s" % ", ".join(matches))
     return matches[0]
 
-def init_env(appname, dirname):
+def init_env(dirname):
     testclassname="%sTest" % "".join([tok.capitalize()
                                       for tok in dirname.split("/")])
     indexmodpath=".".join(dirname.split("/")+["index"])
-    return {"AppName": appname,
-            "BucketKey": "%s_BUCKET" % appname.upper(),
-            "WebsiteKey": "%s_WEBSITE" % appname.upper(),
-            "TableKey": "%s_TABLE" % appname.upper(),
-            "TestClassName": testclassname,
+    return {"TestClassName": testclassname,
             "IndexModulePath": indexmodpath}
 
 def dump_handler(tempname, dirname, env, tempdir=TemplateDir):
@@ -47,8 +43,7 @@ if __name__=="__main__":
         dirname=input("path: ").replace(".", "/")
         if not os.path.exists(dirname):
             os.makedirs(dirname)
-        appname=dirname.split("/")[0]
-        env=init_env(appname, dirname)    
+        env=init_env(dirname)    
         dump_handler(tempname, dirname, env)
     except RuntimeError as error:
         print ("Error: %s" % error)
