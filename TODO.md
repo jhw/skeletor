@@ -1,18 +1,19 @@
 ### short
 
-- check pareto2 event types
-- adds templates/workers subdir for event, topic
-- check what baked in assumption regarding inclusion of mock s3/ddb/sns
+- table, bucket and queue event workers
 - run migrate_infra.py on templates
-- consider handlers for different event types
-  - because have different event structures
 - update init_env in scripts/create_handler.py
 - new tag 0.1
  
- ### medium
+### medium
 
 ### thoughts
 
+- adds templates/workers subdir for event, topic?
+  - no I seem to remember I designed it assuming a flat directory structure
+  - remember old template names
+
 ### done
 
-  - endpoint, event, timer, other?
+- check pareto2 event types
+- endpoint, event, timer, other?
