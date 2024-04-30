@@ -1,10 +1,11 @@
 ### short
 
-- remove demo and check test creates it
+- check pareto2 event types
+- adds templates/workers subdir for event, topic
 - check what baked in assumption regarding inclusion of mock s3/ddb/sns
-- cut down templates to pareto2 0.8 versions
-  - endpoint, event, timer, other?
 - run migrate_infra.py on templates
+- consider handlers for different event types
+  - because have different event structures
 - update init_env in scripts/create_handler.py
 - new tag 0.1
  
@@ -13,3 +14,5 @@
 ### thoughts
 
 ### done
+
+  - endpoint, event, timer, other?
