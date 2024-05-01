@@ -1,6 +1,8 @@
 ### short
 
-- check for #{}
+- allow templates to sit in nested directory
+  - requires create_handler.py to use os.walk
+  
 - new tag 0.1
  
 ### medium
@@ -13,6 +15,7 @@
 
 ### done
 
+- check for #{}
 - run migrate_infra.py on templates
 - refactor queue-event-worker event
 - update init_env in scripts/create_handler.py
