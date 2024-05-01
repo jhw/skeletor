@@ -1,11 +1,11 @@
 ### short
 
-- allow templates to sit in nested directory
-  - requires create_handler.py to use os.walk
-  
 - new tag 0.1
  
 ### medium
+
+- allow templates to sit in nested directory?
+  - problem is having a flat directory is nice because then you can easily check fragments against template names
 
 ### thoughts
 
