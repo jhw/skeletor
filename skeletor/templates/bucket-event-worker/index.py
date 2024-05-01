@@ -1,22 +1,27 @@
 """
 infra:
-  events:
-  - name: my-bucket-event
+  alarm:
+    period: 60
+    threshold: 10
+  event:
     pattern:
-      object:
-        key:
-        - prefix: hello
-      reason:
-      - PutObject
-    source:
-      name: #{AppName}
-      type: bucket
+      detail:
+        object:
+          key:
+          - prefix: hello
+        reason:
+        - PutObject
+    type: bucket
+  layers: []
   permissions:
   - dynamodb:GetItem
   - dynamodb:PutItem
   - dynamodb:UpdateItem
   - s3:GetObject
   - s3:PutObject
+  size: 512
+  timeout: 5
+  type: worker
 """
 
 import boto3, json, os

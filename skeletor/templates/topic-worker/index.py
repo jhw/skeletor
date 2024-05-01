@@ -1,12 +1,18 @@
 """
 infra:
-  topic: {}
+  alarm:
+    period: 60
+    threshold: 10
+  layers: []
   permissions:
   - dynamodb:GetItem
   - dynamodb:PutItem
   - dynamodb:UpdateItem
   - s3:GetObject
   - s3:PutObject
+  size: 512
+  timeout: 5
+  type: worker
 """
 
 import boto3, json, os

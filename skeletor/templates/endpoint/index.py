@@ -1,14 +1,18 @@
-f"""
+"""
 infra:
-  endpoint:
-    api: public
-    method: GET
-    path: hello
-    parameters:
-    - foobar
+  auth: public
+  layers: []
+  method: GET
+  parameters:
+  - foobar
+  path: hello
   permissions:
+  - dynamodb:GetObject
   - dynamodb:Query
   - s3:GetObject
+  size: 512
+  timeout: 5
+  type: endpoint
 """
 
 import boto3, json, os

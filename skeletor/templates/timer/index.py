@@ -1,11 +1,13 @@
 """
 infra:
+  event:
+    rate: 1 hour
+  layers: []
   permissions:
-  - sqs:SendMessage
-  timer:
-    rate: "1 hour"
-    body:
-      hello: world
+  - sqs:SendMessage # because most likely action is to push series of smaller granular timer messages onto a queue
+  size: 512
+  timeout: 5
+  type: timer
 """
 
 import boto3, json, os
