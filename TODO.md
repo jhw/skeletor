@@ -1,6 +1,7 @@
 ### short
 
-- new tag 0.1
+- single table/bucket/queue/userpool
+- cognito to allow multiple users
  
 ### medium
 
