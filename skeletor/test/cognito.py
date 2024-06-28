@@ -2,7 +2,7 @@ import boto3
 
 PoolName = "my-test-pool"
 
-class CognitoMixin:
+class SkeletorCognitoTestMixin:
 
     def setup_cognito(self,
                       username,

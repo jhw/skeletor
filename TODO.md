@@ -1,5 +1,8 @@
 ### short
 
+- rename TestMixin as simply Mixin
+- rename skeletor.test as skeletor.services
+- tests to cover services
 - single table/bucket/queue/userpool
 - cognito to allow multiple users
  
