@@ -34,11 +34,7 @@ class SkeletorCognitoTestMixin:
                               for key, value in userattrs.items()]
         )
         
-    def teardown_cognito(self, username = Username):
-        self.cognito.admin_delete_user(
-            UserPoolId = self.user_pool_id,
-            Username = username
-        )
+    def teardown_cognito(self):
         self.cognito.delete_user_pool(
             UserPoolId = self.user_pool_id
         )
